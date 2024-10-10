@@ -24,12 +24,33 @@
                                     <action selector="fetchMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7mB-gE-LCW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haH-rn-jCU">
+                                <rect key="frame" x="126.66666666666669" y="464" width="140" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Upload Backup"/>
+                                <connections>
+                                    <action selector="uploadBackUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PLp-Mh-zaq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPT-Zw-iNr">
+                                <rect key="frame" x="119" y="507" width="155" height="35"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete messages"/>
+                                <connections>
+                                    <action selector="deleteMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hKE-Sf-TyL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="FPT-Zw-iNr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5HI-mq-rm0"/>
+                            <constraint firstItem="FPT-Zw-iNr" firstAttribute="top" secondItem="haH-rn-jCU" secondAttribute="bottom" constant="8" symbolic="YES" id="FHA-hk-vob"/>
                             <constraint firstItem="SZD-6T-0dP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Xw7-gq-ObP"/>
                             <constraint firstItem="SZD-6T-0dP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bel-zu-eaO"/>
+                            <constraint firstItem="haH-rn-jCU" firstAttribute="firstBaseline" secondItem="SZD-6T-0dP" secondAttribute="baseline" constant="43" symbolType="layoutAnchor" id="iHH-1I-YhL"/>
+                            <constraint firstItem="haH-rn-jCU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nWb-eA-7HA"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -41,6 +62,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

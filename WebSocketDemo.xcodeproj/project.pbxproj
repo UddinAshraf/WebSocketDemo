@@ -17,6 +17,11 @@
 		43C252172CB73C5D00C37EBF /* WebSocketDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C252162CB73C5D00C37EBF /* WebSocketDemoUITests.swift */; };
 		43C252192CB73C5D00C37EBF /* WebSocketDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C252182CB73C5D00C37EBF /* WebSocketDemoUITestsLaunchTests.swift */; };
 		43C252272CB73DBC00C37EBF /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C252262CB73DBC00C37EBF /* WebSocketManager.swift */; };
+		43EFDAFF2CB7F97A00CB6B25 /* BackupFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFDAFB2CB7F97A00CB6B25 /* BackupFileManager.swift */; };
+		43EFDB002CB7F97A00CB6B25 /* BackupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFDAFC2CB7F97A00CB6B25 /* BackupOperation.swift */; };
+		43EFDB012CB7F97A00CB6B25 /* BackupUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFDAFD2CB7F97A00CB6B25 /* BackupUploader.swift */; };
+		43EFDB042CB7F99200CB6B25 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 43EFDB032CB7F99200CB6B25 /* Zip */; };
+		43EFDB052CB7F9F900CB6B25 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 43F5FCD02CB7BCD3008D815A /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		43F5FCD12CB7BCD3008D815A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 43F5FCD02CB7BCD3008D815A /* RealmSwift */; };
 		43F5FCD32CB7BD04008D815A /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5FCD22CB7BD04008D815A /* ChatMessage.swift */; };
 		43F5FCD52CB7C003008D815A /* ChatMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5FCD42CB7C003008D815A /* ChatMessageManager.swift */; };
@@ -42,6 +47,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		43EFDB062CB7F9F900CB6B25 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				43EFDB052CB7F9F900CB6B25 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		43C251F22CB73C5B00C37EBF /* WebSocketDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebSocketDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C251F52CB73C5B00C37EBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +76,9 @@
 		43C252162CB73C5D00C37EBF /* WebSocketDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketDemoUITests.swift; sourceTree = "<group>"; };
 		43C252182CB73C5D00C37EBF /* WebSocketDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		43C252262CB73DBC00C37EBF /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
+		43EFDAFB2CB7F97A00CB6B25 /* BackupFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackupFileManager.swift; sourceTree = "<group>"; };
+		43EFDAFC2CB7F97A00CB6B25 /* BackupOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackupOperation.swift; sourceTree = "<group>"; };
+		43EFDAFD2CB7F97A00CB6B25 /* BackupUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackupUploader.swift; sourceTree = "<group>"; };
 		43F5FCD22CB7BD04008D815A /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		43F5FCD42CB7C003008D815A /* ChatMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageManager.swift; sourceTree = "<group>"; };
 		43F5FCD72CB7C20E008D815A /* ChatMessageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageStore.swift; sourceTree = "<group>"; };
@@ -69,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EFDB042CB7F99200CB6B25 /* Zip in Frameworks */,
 				43F5FCD12CB7BCD3008D815A /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +120,7 @@
 				43C2520B2CB73C5D00C37EBF /* WebSocketDemoTests */,
 				43C252152CB73C5D00C37EBF /* WebSocketDemoUITests */,
 				43C251F32CB73C5B00C37EBF /* Products */,
+				43EFDB022CB7F99200CB6B25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,8 +137,9 @@
 		43C251F42CB73C5B00C37EBF /* WebSocketDemo */ = {
 			isa = PBXGroup;
 			children = (
-				43F5FCD92CB7C230008D815A /* Logic */,
+				43F5FCD92CB7C230008D815A /* Persistent Logic */,
 				43F5FCD62CB7C1F1008D815A /* Protocol */,
+				43EFDAFE2CB7F97A00CB6B25 /* Background Logic */,
 				43FED0EC2CB7514D00512642 /* Models */,
 				43C252252CB73D7600C37EBF /* Service */,
 				43C251F52CB73C5B00C37EBF /* AppDelegate.swift */,
@@ -154,6 +179,23 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		43EFDAFE2CB7F97A00CB6B25 /* Background Logic */ = {
+			isa = PBXGroup;
+			children = (
+				43EFDAFB2CB7F97A00CB6B25 /* BackupFileManager.swift */,
+				43EFDAFC2CB7F97A00CB6B25 /* BackupOperation.swift */,
+				43EFDAFD2CB7F97A00CB6B25 /* BackupUploader.swift */,
+			);
+			path = "Background Logic";
+			sourceTree = "<group>";
+		};
+		43EFDB022CB7F99200CB6B25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		43F5FCD62CB7C1F1008D815A /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,12 +204,12 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		43F5FCD92CB7C230008D815A /* Logic */ = {
+		43F5FCD92CB7C230008D815A /* Persistent Logic */ = {
 			isa = PBXGroup;
 			children = (
 				43F5FCDA2CB7C247008D815A /* RealmChatMessageStore.swift */,
 			);
-			path = Logic;
+			path = "Persistent Logic";
 			sourceTree = "<group>";
 		};
 		43FED0EC2CB7514D00512642 /* Models */ = {
@@ -189,6 +231,7 @@
 				43C251EE2CB73C5B00C37EBF /* Sources */,
 				43C251EF2CB73C5B00C37EBF /* Frameworks */,
 				43C251F02CB73C5B00C37EBF /* Resources */,
+				43EFDB062CB7F9F900CB6B25 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +240,7 @@
 			name = WebSocketDemo;
 			packageProductDependencies = (
 				43F5FCD02CB7BCD3008D815A /* RealmSwift */,
+				43EFDB032CB7F99200CB6B25 /* Zip */,
 			);
 			productName = WebSocketDemo;
 			productReference = 43C251F22CB73C5B00C37EBF /* WebSocketDemo.app */;
@@ -272,6 +316,7 @@
 			mainGroup = 43C251E92CB73C5B00C37EBF;
 			packageReferences = (
 				43F5FCCD2CB7BCD3008D815A /* XCRemoteSwiftPackageReference "realm-swift" */,
+				43EFDAF92CB7F88400CB6B25 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 43C251F32CB73C5B00C37EBF /* Products */;
 			projectDirPath = "";
@@ -323,6 +368,9 @@
 				43F5FCD82CB7C20E008D815A /* ChatMessageStore.swift in Sources */,
 				43F5FCD32CB7BD04008D815A /* ChatMessage.swift in Sources */,
 				43C251F82CB73C5B00C37EBF /* SceneDelegate.swift in Sources */,
+				43EFDAFF2CB7F97A00CB6B25 /* BackupFileManager.swift in Sources */,
+				43EFDB002CB7F97A00CB6B25 /* BackupOperation.swift in Sources */,
+				43EFDB012CB7F97A00CB6B25 /* BackupUploader.swift in Sources */,
 				43F5FCD52CB7C003008D815A /* ChatMessageManager.swift in Sources */,
 				43C252272CB73DBC00C37EBF /* WebSocketManager.swift in Sources */,
 			);
@@ -673,6 +721,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		43EFDAF92CB7F88400CB6B25 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
 		43F5FCCD2CB7BCD3008D815A /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -684,6 +740,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		43EFDB032CB7F99200CB6B25 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43EFDAF92CB7F88400CB6B25 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
 		43F5FCD02CB7BCD3008D815A /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 43F5FCCD2CB7BCD3008D815A /* XCRemoteSwiftPackageReference "realm-swift" */;
