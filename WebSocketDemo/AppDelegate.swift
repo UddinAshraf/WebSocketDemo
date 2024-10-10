@@ -6,14 +6,31 @@
 //
 
 import UIKit
+import RealmSwift
+import OSLog
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if oldSchemaVersion < 1 {
+                    Logger().info("No Migration needed")
+                }
+            }
+        )
+        
+        Realm.Configuration.defaultConfiguration = config
+        
+        do {
+            let realm = try Realm()
+            print("Realm file path: \(realm.configuration.fileURL!)")
+        } catch let error {
+            Logger().error("Failed to open Realm database: \(error.localizedDescription)")
+        }
+        
         return true
     }
 

@@ -49,17 +49,37 @@ class WebSocketManager {
                 case .data(_):
                     logger.info("Received Message as Binary data type ")
                 case .string(let message):
-                    print(message)
                     self.handleMessage(message)
                 @unknown default:
                     logger.error("Unknown Message Type")
                 }
             case .failure(let failure):
                 logger.error("Error in receiving message: \(failure.localizedDescription)")
-                disconnect()
+                handleFailure(failure)
+           
             }
             self.listenForMessages()
         })
+    }
+    
+    private func handleFailure(_ failure: Error) {
+        if let urlError = failure as? URLError {
+            switch urlError.code {
+            case .notConnectedToInternet:
+                logger.error("No internet connection. Attempting to reconnect...")
+            case .timedOut:
+                logger.error("Connection timed out. Attempting to reconnect...")
+                self.connect()
+            case .networkConnectionLost:
+                logger.error("Network connection lost. Disconnecting...")
+                self.disconnect()
+            default:
+                logger.error("Received an error: \(urlError.localizedDescription)")
+            }
+        } else {
+            logger.error("Received a general error: \(failure.localizedDescription)")
+            self.disconnect()
+        }
     }
     
     func handleMessage(_ message: String) {
@@ -67,7 +87,6 @@ class WebSocketManager {
         guard let data = message.data(using: .utf8),
               let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
               let replyGetKeys = json["replygetkeys"] as? [[String: Any]] else {
-            logger.error("Failed to parse replygetkeys")
             return
         }
         
@@ -81,12 +100,12 @@ class WebSocketManager {
             do {
                 let decoder = JSONDecoder()
                 let messageDetails = try decoder.decode(MessageDetails.self, from: jsonData)
+                guard let realmStore = RealmChatMessageStore() else { return }
+                let chatManager = ChatMessageManager(store: realmStore)
                 
-                print("Key: \(key)")
-                print("Message: \(messageDetails.message)")
-                print("Room: \(messageDetails.room)")
-                print("Timestamp: \(messageDetails.timestamp)")
-                print("From: \(messageDetails.from)")
+                let newMessage = ChatMessage(key: key, message: messageDetails.message, room: messageDetails.room, timestamp: Int64(messageDetails.timestamp) ?? 0, from: messageDetails.from, isUploaded: false)
+                chatManager.saveMessage(chatMessage: newMessage)
+                
                 
             } catch {
                 logger.error("Failed to decode value for key \(key): \(error)")
